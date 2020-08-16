@@ -1,6 +1,9 @@
 # flask-boilerplate-simple2
 Simple Flask project 2; Basic Flask app with DB & model support using SQLAlchmey 
 
+## Important
+Make sure to generate a new secret key in the `src/config.py` file.
+
 ## Install
 Run the following code block before starting up the app for the first time.
 ```

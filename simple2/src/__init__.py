@@ -31,7 +31,6 @@ def create_app():
     @app.route('/api/post/all')
     def all_posts():
         posts = Post.query.join('author').all()
-        
         _posts = {
             'posts': []
         }
@@ -59,11 +58,8 @@ def create_app():
         time_from = date_time_from[11:19:1]
         time_to = date_time_to[11:19:1]
 
-        print( 'from: ' + date_from + ' ' + time_from + ' to: ' + date_to + ' ' + time_to )
-        sql = text("select * from view_history where post_id = "+str(id)+" and created::timestamp::date BETWEEN '"+date_from+"' AND '"+date_to+"' and created::time BETWEEN '"+time_from+"' AND '"+time_to+"'")
-        print(sql)
+        sql = text("select * from view_history where post_id = "+str(id)+" and created::timestamp::date BETWEEN '"+date_from+"' AND '"+date_to+"' and created::time BETWEEN '"+time_from+"' AND '"+time_to+"'") # Running a custom SQL query
         history = db.engine.execute(sql)
-        # history = db.Session.query(ViewHistory).from_statement(sql)
         _history = {
             "history": []
         }

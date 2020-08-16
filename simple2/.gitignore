@@ -132,3 +132,4 @@ dmypy.json
 *sqlite
 
 notes.txt
+migrations/

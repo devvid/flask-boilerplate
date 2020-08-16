@@ -23,7 +23,7 @@ def create_history(db, post, x=1):
     This function will create history objects and store them into the
     database.
     """
-    for i in range(0, int(50000/x)):
+    for i in range(0, int(100/x)):
         hist = ViewHistory()
         hist.ip_address = str(IPv4Address(getrandbits(32)))
         hist.post = post
