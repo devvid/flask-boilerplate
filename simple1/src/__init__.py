@@ -2,8 +2,6 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from datetime import datetime
 
-from src.models import User, Post, ViewHistory
-
 """
 Application Simple 1
 """
@@ -19,6 +17,7 @@ def create_app():
     # Start
     @app.route('/test/<input_valve>')
     def test_function(input_valve):
+        input_valve = int(input_valve)
         result = 10 * input_valve
         return jsonify({'result': result})
     # End
